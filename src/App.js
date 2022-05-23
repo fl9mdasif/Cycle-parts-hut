@@ -1,5 +1,6 @@
 
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
 import Home from './pages/Home/Home';
 import Navbar from '../src/pages/Shared/Navbar'
 import Footer from './pages/Shared/Footer';
@@ -9,6 +10,8 @@ import Login from './pages/Login/Login';
 import SignUp from './pages/Login/SignUp';
 import Blog from './pages/Blog/Blog';
 import PrivateAuth from './pages/Login/PrivateAuth';
+import Purchase from './pages/Home/Purchase'
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -21,11 +24,16 @@ function App() {
         <Route path="/login" element={<Login />}> </Route>
         <Route path="/signup" element={<SignUp />}> </Route>
         {/* private Page*/}
+        <Route path='/product/:productID' element={
+          <Purchase />
+        }></Route>
         <Route path="/blog" element={<PrivateAuth><Blog /></PrivateAuth>}> </Route>
         <Route path='*' element={<NotFound />}></Route>
 
 
       </Routes>
+      <ToastContainer></ToastContainer>
+
       <Footer />
 
     </div>
