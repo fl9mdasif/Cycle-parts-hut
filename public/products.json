@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Pedals",
+        "imgUrl": "https://i.ibb.co/sm8kM3w/pedals.jpg",
+        "description": "128GB 6GB RAM, 128GB 8GB RAM, 256GB 8GB RAM",
+        "price": "35000",
+        "minquantity": "100",
+        "availablequantity": "1590"
+    },
+    {
+        "name": "Chain",
+        "imgUrl": "https://i.ibb.co/FX6VBm2/chainjpg.jpg",
+        "description": "Hybrid Dual SIM 6.67 Inch Screen  6 GB RAM 128 GB ROM 64MP + 8MP + 2MP + 2MP Rear Camera 20MP + 2MP Front Camera Android 10.0; MIUI 11 OS Non-Removable Li-Po 4500 mAh Battery",
+        "price": "25000",
+        "minquantity": "100",
+        "availablequantity": "1590"
+    },
+    {
+        "name": "Seat",
+        "imgUrl": "https://i.ibb.co/F5vFwQT/seats.jpg",
+        "description": "Dual SIM 6.67 Inch Display 4GB RAM 64GB ROM 48MP + 8MP + 5MP + 2MP Rear Camera 16MP Front Camera Android 10.0; MIUI 11 OS Side-Mounted Fingerprint Sensor ",
+        "price": "20000",
+        "minquantity": "100",
+        "availablequantity": "1590"
+    }
+]

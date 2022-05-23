@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "John Lyx",
+        "reviewContent": "I have had Dell forever. They are very sturdy and you can trust them. My kids dropped them several times and they keep working.",
+        "rating": 4
+    },
+    {
+        "id": 2,
+        "name": "Acon Fer",
+        "reviewContent": "I will buy their Poweredge server, but will wait for the Black Monday discount. All other computers I bought had problems, but Dell is a solid bet.",
+        "rating": 5
+    },
+    {
+        "id": 3,
+        "name": "Mudes Tue",
+        "reviewContent": "I attempted to order laptop on the dell.com website for twice. My order got canceled without any valid reason. I attempted to reach customer service twice and got froward to different phone number and call ended after hour long wait. Attempted few times and same result.",
+        "rating": 4
+    },
+    {
+        "id": 4,
+        "name": "Adam Hyk",
+        "reviewContent": "Wow! The worst best phone i have ever bought from mi store.",
+        "rating": 3
+    },
+    {
+        "id": 5,
+        "name": "Operis Suci",
+        "reviewContent": "this is my first phone from xiaomi & the design of the mobile is so glossy and nice, Xiaomi is the best choice for use and business",
+        "rating": 4
+    },
+    {
+        "id": 6,
+        "name": "MD Asif",
+        "reviewContent": "My past phone was not good at the last, I changed my phone with warranty, Mi deals better than any other, people love mi",
+        "rating": 5
+    }
+]
