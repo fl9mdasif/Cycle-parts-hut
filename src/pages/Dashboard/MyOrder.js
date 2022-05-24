@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const MyOrder = () => {
+
     const [orders, setOrders] = useState([]);
     const [user] = useAuthState(auth);
     // const { product, orderQuantity, price, total } = orders;
@@ -15,13 +17,15 @@ const MyOrder = () => {
         }
     }, [user])
 
-    const handleSignOut = () => {
-        console.log('clicked')
-    }
+    // const handelCheckout = () => {
+    //     // console.log('clicked')
+    //     navigate('/checkout');
+
+    // }
 
     return (
         <div>
-            <div className="text-4xl text-primary">MyOrder</div>
+            <div className="text-4xl py-10 text-primary">MyOrder</div>
 
             <table class="table w-full">
                 <thead>
@@ -31,7 +35,7 @@ const MyOrder = () => {
                         <th>Quantity</th>
                         <th>price per Unit </th>
                         <th>total</th>
-                        <th>Checkbox</th>
+                        <th>Checkout</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,7 +47,11 @@ const MyOrder = () => {
                             <td>{a.price}</td>
                             <td>{a.total}/tk</td>
                             <td>
-                                <button onClick={handleSignOut} className="btn btn-primary border-none shadow-md bg-gradient-to-r from-secondary to-primary"> Checkout</button>
+                                {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-secondary'>pay</button></Link>}
+                                {(a.price && a.paid) && <div>
+                                    <p><span className='text-success'>Paid</span></p>
+                                    <p>Transaction id: <span className='text-success'>{a.transactionId}</span></p>
+                                </div>}
 
                             </td>
                         </tr>)

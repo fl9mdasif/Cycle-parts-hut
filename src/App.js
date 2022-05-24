@@ -16,10 +16,10 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import MyOrder from './pages/Dashboard/MyOrder';
 import AddReview from './pages/Dashboard/AddReview';
 import MyProfile from './pages/Dashboard/MyProfile';
-import CheckOut from './pages/CheckOut/CheckOut';
 import ToolsOrParts from './pages/Home/ToolsOrParts';
 // import Review from './pages/Home/Review';
 import Reviews from './pages/Reviews/Reviews';
+import Payment from './pages/Dashboard/Payment';
 
 function App() {
   return (
@@ -32,15 +32,17 @@ function App() {
         <Route path="/login" element={<Login />}> </Route>
         <Route path="/signup" element={<SignUp />}> </Route>
         <Route path="/products" element={<ToolsOrParts />}> </Route>
-        <Route path="/checkout" element={<CheckOut />}> </Route>
         <Route path="/review" element={<Reviews />}> </Route>
         <Route path='/product/:productID' element={<PrivateAuth><Purchase /></PrivateAuth>}></Route>
-        {/* Nseted Routes */}
+
+        {/* Nested Routes */}
         <Route path='/dashboard' element={<Dashboard />}>
           <Route index element={<MyOrder />}></Route>
           <Route path="addreview" element={<AddReview />}></Route>
           <Route path='portfolio' element={<MyProfile />}></Route>
+          <Route path='payment/:id' element={<Payment />}></Route>
         </Route>
+
         {/* private Page*/}
         <Route path="/blog" element={<PrivateAuth><Blog /></PrivateAuth>}> </Route>
         <Route path='*' element={<NotFound />}></Route>
@@ -48,7 +50,6 @@ function App() {
 
       </Routes>
       <ToastContainer></ToastContainer>
-
       <Footer />
 
     </div>

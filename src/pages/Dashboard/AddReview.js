@@ -10,7 +10,7 @@ const AddReview = () => {
     const [user] = useAuthState(auth);
     const { displayName, email } = user;
     const navigate = useNavigate()
-
+    console.log(user)
 
     // submit form handler
 
@@ -42,8 +42,8 @@ const AddReview = () => {
     }
     return (
         <div>
-            <div className="text-4xl text-primary">Add review</div>
-            <div className="">
+            <div className="text-4xl py-10 text-primary">Add review</div>
+            <div className="justify-center">
                 {/* input form */}
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* Input Name */}
@@ -100,16 +100,16 @@ const AddReview = () => {
                         <label className="label">
                             <span className="label-text">Review</span>
                         </label>
-                        <textarea className=" h-42 border-4 " {...register("review", {})} />
+                        <textarea placeholder="Share your review" className=" h-42 border-4 " {...register("review", {})} />
                         <label className="label">
                             {errors.review?.type === 'required' && <span className="label-text-alt text-red-500">{errors.review.message}</span>}
                         </label>
                     </div>
 
+                    <div className=' justify-start'>
+                        <input className='  btn w-full max-w-xs text-white' type="submit" value="Submit Order" />
 
-
-
-                    <input className='btn w-full max-w-xs text-white' type="submit" value="Submit Order" />
+                    </div>
 
 
                 </form>

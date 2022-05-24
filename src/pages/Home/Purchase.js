@@ -57,9 +57,8 @@ const Purchase = () => {
                 console.log(result)
                 toast('Product added to Dashboard Page')
 
-
             })
-        navigate('/blog')
+        navigate('/dashboard')
 
 
     }
