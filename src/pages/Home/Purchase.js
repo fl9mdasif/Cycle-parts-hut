@@ -31,8 +31,10 @@ const Purchase = () => {
 
         const { name, email, mobile, address, quantity } = orderDetails;
         const totalPrice = price * quantity;
+
         const orderDetail = {
             name: name,
+            product: product.name,
             mail: email,
             phone: mobile,
             location: address,
@@ -53,7 +55,7 @@ const Purchase = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result)
-                toast('Product added to myProduct Page')
+                toast('Product added to Dashboard Page')
 
 
             })

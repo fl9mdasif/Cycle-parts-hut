@@ -12,6 +12,14 @@ import Blog from './pages/Blog/Blog';
 import PrivateAuth from './pages/Login/PrivateAuth';
 import Purchase from './pages/Home/Purchase'
 import { ToastContainer } from 'react-toastify';
+import Dashboard from './pages/Dashboard/Dashboard';
+import MyOrder from './pages/Dashboard/MyOrder';
+import AddReview from './pages/Dashboard/AddReview';
+import MyProfile from './pages/Dashboard/MyProfile';
+import CheckOut from './pages/CheckOut/CheckOut';
+import ToolsOrParts from './pages/Home/ToolsOrParts';
+// import Review from './pages/Home/Review';
+import Reviews from './pages/Reviews/Reviews';
 
 function App() {
   return (
@@ -23,10 +31,17 @@ function App() {
         <Route path="/home" element={<Home />}> </Route>
         <Route path="/login" element={<Login />}> </Route>
         <Route path="/signup" element={<SignUp />}> </Route>
+        <Route path="/products" element={<ToolsOrParts />}> </Route>
+        <Route path="/checkout" element={<CheckOut />}> </Route>
+        <Route path="/review" element={<Reviews />}> </Route>
+        <Route path='/product/:productID' element={<PrivateAuth><Purchase /></PrivateAuth>}></Route>
+        {/* Nseted Routes */}
+        <Route path='/dashboard' element={<Dashboard />}>
+          <Route index element={<MyOrder />}></Route>
+          <Route path="addreview" element={<AddReview />}></Route>
+          <Route path='portfolio' element={<MyProfile />}></Route>
+        </Route>
         {/* private Page*/}
-        <Route path='/product/:productID' element={
-          <Purchase />
-        }></Route>
         <Route path="/blog" element={<PrivateAuth><Blog /></PrivateAuth>}> </Route>
         <Route path='*' element={<NotFound />}></Route>
 
