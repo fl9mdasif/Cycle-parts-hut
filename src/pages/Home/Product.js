@@ -19,7 +19,7 @@ const Product = ({ product }) => {
                     <p className="text-lg p-4">{description}</p>
                     <p className="text-xl pb-2 ">Min-Order: {min_order}<span className="text-sm"></span></p>
                     <p className="text-xl pb-2">Quantity: {available}<span className="text-sm"></span></p>
-                    <p className="text-xl pb-2">Price <span className="text-sm">/Unit</span> : {price}<span className="text-3xl text-yellow-500 ">$</span></p>
+                    <p className="text-xl pb-2">Price <span className="text-sm">/Unit</span> : <span className="text-3xl text-yellow-500 ">$</span>{price}</p>
                 </div>
                 <div class="card-actions">
                     <button onClick={() => navigateProductDetails(_id)} class="btn btn-primary">Buy Now</button>

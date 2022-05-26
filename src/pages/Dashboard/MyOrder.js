@@ -10,7 +10,7 @@ const MyOrder = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/users`)
+            fetch(`https://fast-fjord-70405.herokuapp.com/users`)
                 .then(res => res.json())
                 .then(data => setOrders(data));
         }
@@ -39,7 +39,7 @@ const MyOrder = () => {
     const manageProductToDelete = (id) => {
         const proceed = window.confirm('Are you sure to delete product');
         if (proceed) {
-            const url = `http://localhost:5000/users/${id}`;
+            const url = `https://fast-fjord-70405.herokuapp.com/users/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

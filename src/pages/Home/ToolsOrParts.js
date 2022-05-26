@@ -4,7 +4,7 @@ import Product from './Product';
 const ToolsOrParts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('https://fast-fjord-70405.herokuapp.com/product')
             .then(result => result.json())
             .then(data => setProducts(data))
     }, []);

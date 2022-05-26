@@ -30,7 +30,7 @@ const MyProfile = () => {
         console.log('customer detail &&: ', orderDetail)
 
 
-        const url = `http://localhost:5000/usersprofile`;
+        const url = `https://fast-fjord-70405.herokuapp.com/usersprofile`;
         fetch(url, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },

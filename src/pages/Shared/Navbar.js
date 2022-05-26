@@ -18,7 +18,8 @@ const Navbar = () => {
             <li><Link to='/blog' href="#2">Blog</Link></li>
             {/* <li><Link to='/home#summary' href="#summary">Business Summary</Link></li> */}
             <li><Link to='/review' href="#2">Reviews</Link></li>
-            <li><Link to='/about' href="#2">About </Link></li>
+            {/* <li><Link to='/about' href="#2">About </Link></li> */}
+            <li><Link to='/portfolio' href="#2">Portfolio </Link></li>
 
             {
                 user && <li><Link to='/dashboard' className=" text-black text-decoration-none"> Dashboard</Link></li>

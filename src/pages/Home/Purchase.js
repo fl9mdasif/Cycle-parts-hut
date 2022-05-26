@@ -17,7 +17,7 @@ const Purchase = () => {
     const { name, imgUrl, description, min_order, available, price } = product;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${productID}`)
+        fetch(`https://fast-fjord-70405.herokuapp.com/product/${productID}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, []);
@@ -46,7 +46,7 @@ const Purchase = () => {
         console.log('customer detail &&: ', orderDetail)
 
 
-        const url = `http://localhost:5000/users`;
+        const url = `https://fast-fjord-70405.herokuapp.com/users`;
         fetch(url, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },

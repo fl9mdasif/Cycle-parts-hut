@@ -8,7 +8,7 @@ const Payment = () => {
     const { users, setUsers } = useState();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${id}`)
+        fetch(`https://fast-fjord-70405.herokuapp.com/users/${id}`)
             .then(res => res.json())
             .then(data => setUsers(data))
     }, []);

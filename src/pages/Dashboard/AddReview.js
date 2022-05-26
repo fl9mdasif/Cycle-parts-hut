@@ -25,7 +25,7 @@ const AddReview = () => {
         }
         console.log('review detail &&: ', reviewData)
 
-        const url = `http://localhost:5000/reviews`;
+        const url = `https://fast-fjord-70405.herokuapp.com/reviews`;
         fetch(url, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },

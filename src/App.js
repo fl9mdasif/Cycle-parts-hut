@@ -20,6 +20,7 @@ import ToolsOrParts from './pages/Home/ToolsOrParts';
 // import Review from './pages/Home/Review';
 import Reviews from './pages/Reviews/Reviews';
 import Payment from './pages/Dashboard/Payment';
+import Portfolio from './pages/Portfolio/Portfolio';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/signup" element={<SignUp />}> </Route>
         <Route path="/products" element={<ToolsOrParts />}> </Route>
         <Route path="/review" element={<Reviews />}> </Route>
+        <Route path="/portfolio" element={<Portfolio />}> </Route>
         <Route path='/product/:productID' element={<PrivateAuth><Purchase /></PrivateAuth>}></Route>
 
         {/* Nested Routes */}
