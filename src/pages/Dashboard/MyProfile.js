@@ -48,11 +48,10 @@ const MyProfile = () => {
     }
 
     return (
-        <div>
-            <div className="text-4xl py-10 text-primary">MY PROFILE</div>
+        <div className="flex  justify-center items-center">
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className="text-center text-2xl font-bold">User Information</h2>
+                    <h4 className="  text-3xl text-primary font-bold">USER INFORMATION</h4>
 
                     {/* input form */}
                     <form onSubmit={handleSubmit(onSubmit)}>

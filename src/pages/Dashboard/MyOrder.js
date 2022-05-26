@@ -56,7 +56,7 @@ const MyOrder = () => {
 
     return (
         <div>
-            <div className="text-4xl py-10 text-primary">MyOrder</div>
+            <div className="py-10 font-bold text-center text-primary sm:text-2xl md:text-4xl lg:text-5xl">MY ORDERS</div>
 
             <table class="table w-full">
                 <thead>
