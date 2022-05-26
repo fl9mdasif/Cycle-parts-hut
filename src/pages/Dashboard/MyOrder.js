@@ -15,13 +15,30 @@ const MyOrder = () => {
                 .then(res => res.json())
                 .then(data => setOrders(data));
         }
-    }, [user])
+    }, [user]);
 
     // const handelCheckout = () => {
     //     // console.log('clicked')
     //     navigate('/checkout');
 
     // }
+    const manageProductToDelete = (id) => {
+        const proceed = window.confirm('Are you sure to delete product');
+        if (proceed) {
+            const url = `http://localhost:5000/users/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    const remaining = orders.filter(order => order._id !== id)
+                    setOrders(remaining)
+                })
+        }
+    };
+
+
 
     return (
         <div>
@@ -36,6 +53,7 @@ const MyOrder = () => {
                         <th>price per Unit </th>
                         <th>total</th>
                         <th>Checkout</th>
+                        <th>Manage</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,6 +72,7 @@ const MyOrder = () => {
                                 </div>}
 
                             </td>
+                            <td><button onClick={() => manageProductToDelete(a._id)} className='btn btn-xs bg-red-600'>Delete</button></td>
                         </tr>)
                     }
 
