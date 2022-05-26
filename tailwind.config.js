@@ -7,10 +7,10 @@ module.exports = {
     themes: [
       {
         cycle_parts: {
-          primary: "#a991f7",
-          secondary: "#f6d860",
+          primary: "#f6d860",
+          secondary: "#3d4451",
           accent: "#37cdbe",
-          neutral: "#3d4451",
+          neutral: "#a991f7",
           "base-100": "#ffffff",
         },
       },

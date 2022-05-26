@@ -8,31 +8,31 @@ const BusinessSummery = () => {
             <div class="stats gap-10 stats-vertical lg:stats-horizontal md:stats-horizontal shadow">
 
                 <div class="stat">
-                    <div class="stat-title  text-red-500">Countries</div>
-                    <div class="stat-value p-5">
+                    <div class="stat-title  ">Countries</div>
+                    <div class="stat-value text-yellow-500 p-5">
                         <CountUp start={0} end={25} duration={2.75} />
                     </div>
                     <div class="stat-desc">1995-2022 Feb 1st</div>
                 </div>
 
                 <div class="stat">
-                    <div class="stat-title text-red-500">Customers</div>
-                    <div class="stat-value p-5">
+                    <div class="stat-title ">Customers</div>
+                    <div class="stat-value p-5 text-green-500">
                         <CountUp start={0} end={4500} duration={2.75} />
                     </div>
                     <div class="stat-desc">↗︎ 400 (22%)</div>
                 </div>
 
                 <div class="stat">
-                    <div class="stat-title text-red-500">New Registers</div>
-                    <div class="stat-value p-5">
+                    <div class="stat-title ">New Registers</div>
+                    <div class="stat-value text-red-500 p-5">
                         <CountUp start={0} end={400} duration={2.75} />
                     </div>
                     <div class="stat-desc">Increased (21%)</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-title text-red-500">Reviews</div>
-                    <div class="stat-value p-5">
+                    <div class="stat-title ">Reviews</div>
+                    <div class="stat-value text-blue-500 p-5">
                         <CountUp start={0} end={900} duration={2.75} />
                     </div>
                     <div class="stat-desc"> Increased (14%)</div>

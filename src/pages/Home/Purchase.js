@@ -14,7 +14,7 @@ const Purchase = () => {
 
     //Product Fetch
     const [product, setProduct] = useState([]);
-    const { _id, name, imgUrl, description, min_order, available, price } = product;
+    const { name, imgUrl, description, min_order, available, price } = product;
 
     useEffect(() => {
         fetch(`http://localhost:5000/product/${productID}`)

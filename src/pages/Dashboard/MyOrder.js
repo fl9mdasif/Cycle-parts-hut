@@ -7,8 +7,7 @@ const MyOrder = () => {
 
     const [orders, setOrders] = useState([]);
     const [user] = useAuthState(auth);
-    // const { product, orderQuantity, price, total } = orders;
-    console.log(orders);
+
     useEffect(() => {
         if (user) {
             fetch(`http://localhost:5000/users`)
@@ -16,6 +15,21 @@ const MyOrder = () => {
                 .then(data => setOrders(data));
         }
     }, [user]);
+
+    // console.log('orders', orders[0].mail)
+    // console.log('user', user.email)
+
+    var myOrders = [];
+
+    orders.map(order => {
+        if (order.mail === user.email) {
+            myOrders.push(order)
+        }
+        else {
+            return;
+        }
+    });
+    console.log(myOrders)
 
     // const handelCheckout = () => {
     //     // console.log('clicked')
@@ -58,7 +72,7 @@ const MyOrder = () => {
                 </thead>
                 <tbody>
                     {
-                        orders.map((a, index) => <tr>
+                        myOrders.map((a, index) => <tr>
                             <th>{index + 1}</th>
                             <td>{a.product}</td>
                             <td>{a.orderQuantity}</td>
