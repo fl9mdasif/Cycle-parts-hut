@@ -1,36 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+// import { useNavigate } from 'react-router-dom';
 
 const ManageProduct = () => {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('https://fast-fjord-70405.herokuapp.com/product/product')
+        fetch('https://fast-fjord-70405.herokuapp.com/product')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, []);
 
-    // const handelCheckout = () => {
-    //     // console.log('clicked')
-    //     navigate('/checkout');
-    // }
-
     // Delete Single Shoe
-    const handleDelete = id => {
-        const proceed = window.confirm('Are you sure?');
+    const manageProductToDelete = (id) => {
+        const proceed = window.confirm('Are you sure to delete product');
         if (proceed) {
-            fetch(`https://fast-fjord-70405.herokuapp.com/product/${id}`, {
+            const url = `https://fast-fjord-70405.herokuapp.com/product/${id}`;
+            fetch(url, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
-                    const remaining = products.filter(product => product._id !== id);
-                    setProducts(remaining);
+                    console.log(data)
+                    products(data)
+                    toast('product deleted from my order');
                 })
         }
-    }
+    };
     return (
         <div className="overflow-x-auto">
             <div className="py-10 font-bold text-center text-primary sm:text-2xl md:text-4xl lg:text-5xl">MANAGE PRODUCT</div>
@@ -49,15 +46,13 @@ const ManageProduct = () => {
                 <tbody>
                     {
                         products.map((product, index) =>
-                            <tr
-                                key={product._id}
-                            >
+                            <tr>
                                 <td>{index + 1}</td>
                                 <td>{product.name}</td>
                                 <td>{product.min_order}</td>
                                 <td>{product.price}</td>
                                 <td>{product.available}</td>
-                                <td><button onClick={() => handleDelete(product._id)} className='btn btn-primary'><small className='uppercase'>Delete</small></button></td>
+                                <td><button onClick={() => manageProductToDelete(product._id)} className='btn text-white btn-xs bg-red-600'>Delete</button></td>
                             </tr>)
                     }
                 </tbody>

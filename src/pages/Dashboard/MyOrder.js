@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const MyOrder = () => {
@@ -48,6 +49,7 @@ const MyOrder = () => {
                     console.log(data)
                     const remaining = orders.filter(order => order._id !== id)
                     setOrders(remaining)
+                    toast('product deleted from my order');
                 })
         }
     };

@@ -1,12 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AddProduct = () => {
     //navigate
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     //Form Control & Submit
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -33,14 +33,14 @@ const AddProduct = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if (data.success) {
+                if (data) {
 
-                    toast(`Product Added`)
+                    toast(`Product Added to Database and product page`)
                 }
                 else {
                     toast.error(`Already have and with same Name!`)
                 }
-                navigate(`/produc`);
+                // navigate(`/produc`);
             });
 
     }

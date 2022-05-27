@@ -10,7 +10,7 @@ const AddReview = () => {
     const [user] = useAuthState(auth);
     const { displayName, email } = user;
     const navigate = useNavigate()
-    console.log(user)
+    // console.log(user)
 
     // submit form handler
 
