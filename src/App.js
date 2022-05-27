@@ -17,7 +17,6 @@ import MyOrder from './pages/Dashboard/MyOrder';
 import AddReview from './pages/Dashboard/AddReview';
 import MyProfile from './pages/Dashboard/MyProfile';
 import ToolsOrParts from './pages/Home/ToolsOrParts';
-// import Review from './pages/Home/Review';
 import Reviews from './pages/Reviews/Reviews';
 import Payment from './pages/Dashboard/Payment';
 import MyPortfolio from './pages/Portfolio/MyPortfolio';
@@ -26,7 +25,7 @@ import ManageProduct from './pages/Dashboard/ManageProduct';
 
 function App() {
   return (
-    <div className="App ">
+    <div className="App container mx-auto overflow-visible ">
       <Navbar />
       <Routes>
         {/* Public page */}

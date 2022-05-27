@@ -88,7 +88,7 @@ const MyOrder = () => {
                                 </div>}
 
                             </td>
-                            <td><button onClick={() => manageProductToDelete(a._id)} className='btn btn-xs bg-red-600'>Delete</button></td>
+                            <td><button onClick={() => manageProductToDelete(a._id)} className='btn btn-xs text-white bg-red-600'>Delete</button></td>
                         </tr>)
                     }
 
