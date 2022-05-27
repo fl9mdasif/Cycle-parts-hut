@@ -44,7 +44,7 @@ const AddReview = () => {
 
         <div className="flex h-screen justify-center items-center">
             <div className="card w-96 bg-base-100 shadow-xl">
-                <h4 className="  text-4xl text-primary font-bold">REVIEWS</h4>
+                <h4 className="  text-4xl text-primary font-bold">ADD A REVIEWS</h4>
 
                 <div className="card-body">
                     {/* input form */}
