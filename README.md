@@ -5,7 +5,7 @@
 ### `What is inside my project`
 * homepage
 * product page
-* order product
+* order page
 * blog page
 * reviews page
 * 
@@ -17,8 +17,13 @@
 * v) Manage Producy
 * vi) All orders
 * portfolio page
-
-
+* Login page
+* Registration page
+* 404 page
+* email and password firebase authentication
+* google firebase authentication
+* email verification
+* reset password facilities
 
 
 ### `The technology/ Libraries/ fameWork are being used to design & develop  ` [Parts Manufacture Live Site](https://cycle-parts-hut.web.app/)
