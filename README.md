@@ -1,6 +1,6 @@
 # Design And Development mi Store a professional wearhouse online store.
 
-[Live Site Wearhouse](https://cycle-parts-hut.web.app/) <- This project was developed by @fl9mdasif
+[Live Site Cycle Parts BD](https://cycle-parts-hut.web.app/) <- This project was developed by @fl9mdasif
 
 ### `What is inside my project`
 * homepage
@@ -26,7 +26,7 @@
 * reset password facilities
 
 
-### `The technology/ Libraries/ fameWork are being used to design & develop  ` [Parts Manufacture Live Site](https://cycle-parts-hut.web.app/)
+### `The technology/ Libraries/ fameWork are being used to design & develop  ` [Parts Cycle Parts BD Manufacture Live Site](https://cycle-parts-hut.web.app/)
 
 * React js 
 * React Router
