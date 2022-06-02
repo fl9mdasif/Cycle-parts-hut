@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
@@ -47,7 +47,7 @@ const AllOrders = () => {
                         <th>Quantity</th>
                         <th>price per Unit </th>
                         <th>total</th>
-                        <th>Checkout</th>
+
                         <th>Manage</th>
                     </tr>
                 </thead>
@@ -59,14 +59,13 @@ const AllOrders = () => {
                             <td>{a.orderQuantity}</td>
                             <td>{a.price}</td>
                             <td>{a.total} $</td>
-                            <td>
+                            {/* <td>
                                 {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-secondary'>pay</button></Link>}
                                 {(a.price && a.paid) && <div>
                                     <p><span className='text-success'>Paid</span></p>
                                     <p>Transaction id: <span className='text-success'>{a.transactionId}</span></p>
                                 </div>}
-
-                            </td>
+                            </td> */}
                             <td><button onClick={() => manageProductToDelete(a._id)} className='btn btn-xs text-white bg-red-600'>Delete</button></td>
                         </tr>)
                     }
