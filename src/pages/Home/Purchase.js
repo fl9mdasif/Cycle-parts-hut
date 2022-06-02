@@ -183,7 +183,7 @@ const Purchase = () => {
                                 </label>
                                 <input
                                     type="number"
-                                    placeholder="Purchase Quantity"
+                                    placeholder="Purchase Quantity must be minOrder  "
                                     min={min_order}
                                     max={available}
                                     className="input input-bordered w-full max-w-xs"

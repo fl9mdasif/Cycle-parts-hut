@@ -35,11 +35,9 @@ const AllOrders = () => {
         }
     };
 
-
-
     return (
         <div>
-            <div className="py-10 font-bold text-center text-primary sm:text-2xl md:text-4xl lg:text-5xl">MY ORDERS</div>
+            <div className="py-10 font-bold text-center text-primary sm:text-2xl md:text-4xl lg:text-5xl">All ORDERS</div>
 
             <table class="table w-full">
                 <thead>
