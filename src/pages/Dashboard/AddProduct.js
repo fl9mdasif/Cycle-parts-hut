@@ -5,43 +5,59 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AddProduct = () => {
-    //navigate
-    // const navigate = useNavigate();
+    const imageStorageKey = '2c213338298945009a5f44b7b85d3b4f';
 
     //Form Control & Submit
     const { register, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = formInfo => {
-
         const { name, description, quantity, price, min_order, imgUrl } = formInfo;
 
-        const product = {
-            name: name,
-            imgUrl: imgUrl,
-            description: description,
-            price: price,
-            min_order: min_order,
-            available: quantity
-        }
-        console.log('product', product);
+        const image = formInfo.image[0];
+        const formData = new FormData();
+        formData.append('image', image);
 
-        const url = `https://fast-fjord-70405.herokuapp.com/product`;
-        fetch(url, {
+        const url1 = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+        fetch(url1, {
             method: 'POST',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(product)
+            body: formData
         })
             .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data) {
+            .then(result => {
+                if (result.success) {
+                    const image = result.data.display_url;
+                    const product = {
+                        name: name,
+                        imgUrl: image,
+                        description: description,
+                        price: price,
+                        min_order: min_order,
+                        available: quantity
+                    }
+                    console.log('product', product);
+                    const url = `https://fast-fjord-70405.herokuapp.com/product`;
+                    fetch(url, {
+                        method: 'POST',
+                        headers: { 'content-type': 'application/json' },
+                        body: JSON.stringify(product)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data)
+                            if (data) {
 
-                    toast(`Product Added to Database and product page`)
+                                toast(`Product Added to Database and product page`)
+                            }
+                            else {
+                                toast.error(`Already have and with same Name!`)
+                            }
+                            // navigate(`/produc`);
+                        });
                 }
-                else {
-                    toast.error(`Already have and with same Name!`)
-                }
-                // navigate(`/produc`);
             });
+
+
+
+
 
     }
     return (
@@ -160,24 +176,23 @@ const AddProduct = () => {
                                     {errors.quantity?.type === 'required' && <span className="label-text-alt text-red-500">{errors.quantity.message}</span>}
                                 </label>
                             </div>
-                            {/* Input Image Link*/}
+                            {/* img uplaod */}
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
-                                    <span className="label-text">Image Link</span>
+                                    <span className="label-text">Photo</span>
                                 </label>
                                 <input
-                                    type="text"
-                                    placeholder="Image Link"
+                                    type="file"
                                     className="input input-bordered w-full max-w-xs"
-                                    {...register("imgUrl", {
+                                    {...register("image", {
                                         required: {
                                             value: true,
-                                            message: `Image Link Required`
+                                            message: 'Image is Required'
                                         }
                                     })}
                                 />
                                 <label className="label">
-                                    {errors.imgUrl?.type === 'required' && <span className="label-text-alt text-red-500">{errors.imgUrl.message}</span>}
+                                    {errors.image?.type === 'required' && <span className="label-text-alt text-red-500">{errors.image.message}</span>}
                                 </label>
                             </div>
 

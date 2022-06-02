@@ -22,6 +22,7 @@ import Payment from './pages/Dashboard/Payment';
 import MyPortfolio from './pages/Portfolio/MyPortfolio';
 import AddProduct from './pages/Dashboard/AddProduct';
 import ManageProduct from './pages/Dashboard/ManageProduct';
+import AllOrders from './pages/Dashboard/AllOrders';
 
 function App() {
   return (
@@ -38,20 +39,22 @@ function App() {
         <Route path="/portfolio" element={<MyPortfolio />}> </Route>
         <Route path='/product/:productID' element={<PrivateAuth><Purchase /></PrivateAuth>}></Route>
 
+
         {/* Nested Routes */}
         <Route path='/dashboard' element={<Dashboard />}>
           <Route index element={<MyOrder />}></Route>
           <Route path="addreview" element={<AddReview />}></Route>
           <Route path="addproduct" element={<AddProduct />}></Route>
           <Route path="manageproduct" element={<ManageProduct />}></Route>
+          <Route path="allorders" element={<AllOrders />}></Route >
           <Route path='portfolio' element={<MyProfile />}></Route>
           <Route path='payment/:id' element={<Payment />}></Route>
         </Route>
 
+
         {/* private Page*/}
         <Route path="/blog" element={<PrivateAuth><Blog /></PrivateAuth>}> </Route>
         <Route path='*' element={<NotFound />}></Route>
-
 
       </Routes>
       <ToastContainer></ToastContainer>

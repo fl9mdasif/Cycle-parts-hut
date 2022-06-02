@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
-const MyOrder = () => {
+const AllOrders = () => {
 
-    const [orders, setOrders] = useState([]);
+    const [AllOrders, setOrders] = useState([]);
     const [user] = useAuthState(auth);
 
     useEffect(() => {
@@ -17,26 +17,7 @@ const MyOrder = () => {
         }
     }, [user]);
 
-    // console.log('orders', orders[0].mail)
-    // console.log('user', user.email)
 
-    var myOrders = [];
-
-    orders.map(order => {
-        if (order.mail === user.email) {
-            myOrders.push(order)
-        }
-        else {
-            return;
-        }
-    });
-    console.log(myOrders)
-
-    // const handelCheckout = () => {
-    //     // console.log('clicked')
-    //     navigate('/checkout');
-
-    // }
     const manageProductToDelete = (id) => {
         const proceed = window.confirm('Are you sure to delete product');
         if (proceed) {
@@ -47,9 +28,9 @@ const MyOrder = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
-                    const remaining = orders.filter(order => order._id !== id)
-                    setOrders(remaining)
-                    toast('product deleted from my order');
+                    //const remaining = orders.filter(order => order._id !== id)
+                    setOrders(data)
+                    toast('product deleted from ALL order');
                 })
         }
     };
@@ -74,7 +55,7 @@ const MyOrder = () => {
                 </thead>
                 <tbody>
                     {
-                        myOrders.map((a, index) => <tr>
+                        AllOrders.map((a, index) => <tr>
                             <th>{index + 1}</th>
                             <td>{a.product}</td>
                             <td>{a.orderQuantity}</td>
@@ -100,4 +81,4 @@ const MyOrder = () => {
     );
 };
 
-export default MyOrder;
+export default AllOrders;

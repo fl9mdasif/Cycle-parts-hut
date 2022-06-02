@@ -9,7 +9,10 @@ const Reviews = () => {
     useEffect(() => {
         fetch(`https://fast-fjord-70405.herokuapp.com/reviews`)
             .then(res => res.json())
-            .then(data => setReviews(data));
+            .then(data => {
+                setReviews(data);
+                // console.log('review data', data)
+            });
 
     }, [])
     return (

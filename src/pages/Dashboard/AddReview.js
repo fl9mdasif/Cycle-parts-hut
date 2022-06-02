@@ -9,36 +9,52 @@ const AddReview = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [user] = useAuthState(auth);
     const { displayName, email } = user;
-    const navigate = useNavigate()
-    // console.log(user)
+    const navigate = useNavigate();
 
     // submit form handler
+    const imageStorageKey = '2c213338298945009a5f44b7b85d3b4f';
+
 
     const onSubmit = (reviewData) => {
-        const { name, review } = reviewData;
+        const { rate, name, review } = reviewData;
+        console.log(reviewData);
 
-        console.log(reviewData)
+        const image = reviewData.image[0];
+        const formData = new FormData();
+        formData.append('image', image);
 
-        const data = {
-            name: name,
-            review: review
-        }
-        console.log('review detail &&: ', reviewData)
-
-        const url = `https://fast-fjord-70405.herokuapp.com/reviews`;
-        fetch(url, {
+        const url1 = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+        fetch(url1, {
             method: 'POST',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(data)
+            body: formData
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result)
-                toast('Your review added to Reviews Page')
+                if (result.success) {
+                    const image = result.data.display_url;
+                    // console.log('img bb link add', result.data.display_url);
+                    const data = {
+                        name: name,
+                        review: review,
+                        ratings: rate,
+                        imgLink: image
+
+                    }
+                    // send data to server
+                    const url = `https://fast-fjord-70405.herokuapp.com/reviews`;
+                    fetch(url, {
+                        method: 'POST',
+                        headers: { 'content-type': 'application/json' },
+                        body: JSON.stringify(data)
+                    })
+                        .then(res => res.json())
+                        .then(result => {
+                            console.log(result)
+                            toast('Your review added to Reviews Page')
+                        })
+                    navigate('/review');
+                }
             })
-        navigate('/home')
-
-
     }
     return (
 
@@ -97,7 +113,38 @@ const AddReview = () => {
                                 {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
                             </label>
                         </div>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Rate US</span>
+                            </label>
+                            <select {...register("rate")}>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
 
+                        {/* img uplaod */}
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Photo</span>
+                            </label>
+                            <input
+                                type="file"
+                                className="input input-bordered w-full max-w-xs"
+                                {...register("image", {
+                                    required: {
+                                        value: true,
+                                        message: 'Image is Required'
+                                    }
+                                })}
+                            />
+                            <label className="label">
+                                {errors.image?.type === 'required' && <span className="label-text-alt text-red-500">{errors.image.message}</span>}
+                            </label>
+                        </div>
                         {/* Input review */}
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
