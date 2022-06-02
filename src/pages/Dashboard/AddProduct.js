@@ -10,7 +10,7 @@ const AddProduct = () => {
     //Form Control & Submit
     const { register, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = formInfo => {
-        const { name, description, quantity, price, min_order, imgUrl } = formInfo;
+        const { name, description, quantity, price, min_order } = formInfo;
 
         const image = formInfo.image[0];
         const formData = new FormData();
