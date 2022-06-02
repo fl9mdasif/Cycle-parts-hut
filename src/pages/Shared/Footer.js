@@ -30,7 +30,9 @@ const Footer = () => {
                 </div>
             </div>
             <div className='my-10 text-center'>
-                <p>Copyright © 2022 - fl9mdasif</p>
+                <p>Copyright © 2022 -
+                    <a target="blank" href="https://www.linkedin.com/in/fl9mdasif/" className=" text-blue-700 link link-hover">fl9mdasif</a>
+                </p>
             </div>
         </footer>
     );
