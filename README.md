@@ -1,6 +1,6 @@
-# Design And Development mi Store a professional wearhouse online store.
+# Design And Development [Live Site Cycle Parts BD](https://cycle-parts-hut.web.app/) professional manufacture online store.
 
-[Live Site Cycle Parts BD](https://cycle-parts-hut.web.app/) <- This project was developed by @fl9mdasif
+ This project was developed by @fl9mdasif
 
 ### `What is inside my project`
 * homepage
@@ -8,14 +8,13 @@
 * order page
 * blog page
 * reviews page
-* 
 * Dashboard page
-* i)My Order
-* ii) Add a review
-* iii) My Profile
-* iv) Add product
-* v) Manage Producy
-* vi) All orders
+   i)My Order
+   ii) Add a review
+   iii) My Profile
+   iv) Add product
+   v) Manage Producy
+   vi) All orders
 * portfolio page
 * Login page
 * Registration page
